@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Dashboard</title>
+<link rel="stylesheet" type="text/css" target="_blank" href="style.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="aston.png" alt="logo" />
+          <h1>ASTON PRINTER</h1>
+        </div>
+        <ul>
+            <li><button class="logout-btn" onclick="beranda()">Beranda</button></li>
+            <li><button class="logout-btn" onclick="produk()">Produk</button></li>
+            <li><button class="logout-btn" onclick="pembayaran()">pembayaran</button></li>
+            <li><button class="logout-btn" onclick="profil()">Profil</button></li>
+        </ul>
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </nav>
+      <div class="menubar">
+        <ul>
+            <li><button class="logout-btn" onclick="beranda()">Beranda</button></li>
+            <li><button class="logout-btn" onclick="produk()">Produk</button></li>
+            <li><button class="logout-btn" onclick="pembayaran()">pembayaran</button></li>
+            <li><button class="logout-btn" onclick="profil()">Profil</button></li>
+            <li><button class="logout-btn" onclick="login()">Login</button></li>
+        </ul>
+      </div>
+  
+     
+        <script type="text/javascript">
+            const mobileNav = document.querySelector(".hamburger");
+            const navbar = document.querySelector(".menubar");
+
+            const toggleNav = () => {
+             navbar.classList.toggle("active");
+            mobileNav.classList.toggle("hamburger-active");};
+            mobileNav.addEventListener("click", () => toggleNav());
+
+        </script>
+     
+<style>
+    /* Background image */
+body {
+    background-image: url('https://img.freepik.com/premium-photo/abstract-74-background-wallpaper-gradient_792836-167534.jpg?w=900');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    /* Menambahkan gaya khusus untuk tampilan layar berukuran kecil */
+    .container {
+        padding: 50px 0;
+    }
+}
+</style>
+<style>
+    /* Style untuk video player */
+    #video-container {
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+    video {
+        width: 100%;
+        height: auto;
+    }
+    #pause-button {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @media screen and (max-width: 600px) {
+        #pause-button {
+            bottom: 20px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div id="video-container">
+    <p><h1><center>Review Printer Epson</center></h1></p>
+    <video id="my-video" width="500" controls>
+        <source src="Printer2.mp4" type="video/mp4">
+    </video>
+    <button class="logout-btn" onclick="produk()">Beli</button>
+</div>
+
+<script>
+    // Ambil elemen video dan tombol pause
+    var video = document.getElementById("my-video");
+    var pauseButton = document.getElementById("pause-button");
+
+    // Tambahkan event listener untuk klik tombol pause
+    pauseButton.addEventListener("click", function() {
+        // Periksa apakah video sedang diputar
+        if (video.paused) {
+            // Jika video sedang di-pause, mainkan video
+            video.play();
+            // Ubah teks tombol menjadi "Pause"
+            pauseButton.textContent = "Pause";
+        } else {
+            // Jika video sedang diputar, pause video
+            video.pause();
+            // Ubah teks tombol menjadi "Play"
+            pauseButton.textContent = "Play";
+        }
+    });
+</script>
+<footer>
+    <p>&copy; 2024 Aston pekalongan</p>
+</footer>
+<script>
+    function beranda(){
+        window.location.href = "index.html";
+    }
+    function produk(){
+        window.location.href = "produk.html";
+    }
+    function pembayaran(){
+        window.location.href = "pembayaran.html";
+    }
+    function profil(){
+        window.location.href = "profil.html";
+    }
+    function login(){
+        window.location.href = "login.html";
+    }
+    </script>
+</body>
+</html>

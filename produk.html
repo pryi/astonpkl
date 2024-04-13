@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Dashboard</title>
+<link rel="stylesheet" type="text/css" target="_blank" href="style.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="aston.png" alt="logo" />
+          <h1>ASTON PRINTER</h1>
+        </div>
+        <ul>
+            <li><button class="logout-btn" onclick="beranda()">Beranda</button></li>
+            <li><button class="logout-btn" onclick="produk()">Produk</button></li>
+            <li><button class="logout-btn" onclick="pembayaran()">pembayaran</button></li>
+            <li><button class="logout-btn" onclick="profil()">Profil</button></li>
+        </ul>
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </nav>
+      <div class="menubar">
+        <ul>
+            <li><button class="logout-btn" onclick="beranda()">Beranda</button></li>
+            <li><button class="logout-btn" onclick="produk()">Produk</button></li>
+            <li><button class="logout-btn" onclick="pembayaran()">pembayaran</button></li>
+            <li><button class="logout-btn" onclick="profil()">Profil</button></li>
+            <li><button class="logout-btn" onclick="login()">Login</button></li>
+        </ul>
+      </div>
+  
+     
+        <script type="text/javascript">
+            const mobileNav = document.querySelector(".hamburger");
+            const navbar = document.querySelector(".menubar");
+
+            const toggleNav = () => {
+             navbar.classList.toggle("active");
+            mobileNav.classList.toggle("hamburger-active");};
+            mobileNav.addEventListener("click", () => toggleNav());
+
+        </script>
+     
+</nav>
+<style>
+    /* Background image */
+body {
+    background-image: url('https://img.freepik.com/premium-photo/abstract-74-background-wallpaper-gradient_792836-167534.jpg?w=900');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    /* Menambahkan gaya khusus untuk tampilan layar berukuran kecil */
+    .container {
+        padding: 50px 0;
+    }
+}
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}
+</style>
+<section>
+    <div class="product">
+        <img src="p1.jpg" alt="Product">
+        <div class="product-info">
+            <h3>Printer Brother</h3>
+            <p>Untuk biaya cetak yang hemat, beralihlah ke printer Brother yang ideal untuk sekolah atau kantor.</p>
+            <button class="tombol1" onclick="pembayaran()">Beli</button>
+        </div>
+    </div>
+    <div class="product">
+        <img src="p2.jpg" alt="Product">
+        <div class="product-info">
+            <h3>Printer Epson</h3>
+            <p>Merek satu ini dikenal menawarkan produk printer dengan kualitas yang unggul. Produknya pun hadir dalam berbagai jenis, baik untuk kebutuhan di rumah, kantor, ritel dan juga bisnis. Dengan harga printer merek Epson yang kompetitif, kualitas printer yang ditawarkannya pun tergolong baik di kelasnya. Tertarik beli? .</p>
+            <button class="tombol1" onclick="pembayaran()">Beli</button>
+        </div>
+    </div>
+    <div class="product">
+        <img src="p3.jpg" alt="Product">
+        <div class="product-info">
+            <h3>Printer Canon</h3>
+            <p>Printer Canon adalah salah satu jenis mesin untuk mencetak dokumen dan gambar dari soft file menjadi hard file.</p>
+            <button class="tombol1" onclick="pembayaran()">Beli</button>
+        </div>
+    </div> 
+    <div class="product">
+        <img src="sr.jpg" alt="Product">
+        <div class="product-info">
+            <h3>Service</h3>
+            <p>Kami juga menyediakan layanan service printer mulai dari printer lama hingga printer keluaran terbaru</p>
+            <button class="tombol1" onclick="pembayaran()">Beli</button>
+        </div>
+    </div> 
+    <button onclick="prevImage()">Sebelumnya</button>
+    <button onclick="nextImage()">Berikutnya</button>
+</section>
+ 
+<footer>
+    <p>&copy; 2024 Aston pekalongan</p>
+</footer>
+<script>
+    function beranda(){
+        window.location.href = "index.html";
+    }
+    function produk(){
+        window.location.href = "produk.html";
+    }
+    function pembayaran(){
+        window.location.href = "pembayaran.html";
+    }
+    function profil(){
+        window.location.href = "profil.html";
+    }
+    function prevImage(){
+        window.location.href = "produk.html";
+    }
+    function nextImage(){
+        window.location.href = "produk2.html";
+    }
+    function login(){
+        window.location.href = "login.html";
+    }
+    </script>
+</body>
+</html>

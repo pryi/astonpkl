@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Dashboard</title>
+<link rel="stylesheet" type="text/css" target="_blank" href="style.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="aston.png" alt="logo" />
+          <h1>ASTON PRINTER</h1>
+        </div>
+        <ul>
+            <li><button class="logout-btn" onclick="beranda()">Beranda</button></li>
+            <li><button class="logout-btn" onclick="produk()">Produk</button></li>
+            <li><button class="logout-btn" onclick="pembayaran()">pembayaran</button></li>
+            <li><button class="logout-btn" onclick="profil()">Profil</button></li>
+        </ul>
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </nav>
+      <div class="menubar">
+        <ul>
+            <li><button class="logout-btn" onclick="beranda()">Beranda</button></li>
+            <li><button class="logout-btn" onclick="produk()">Produk</button></li>
+            <li><button class="logout-btn" onclick="pembayaran()">pembayaran</button></li>
+            <li><button class="logout-btn" onclick="profil()">Profil</button></li>
+            <li><button class="logout-btn" onclick="login()">Login</button></li>
+        </ul>
+      </div>
+  
+     
+        <script type="text/javascript">
+            const mobileNav = document.querySelector(".hamburger");
+            const navbar = document.querySelector(".menubar");
+
+            const toggleNav = () => {
+             navbar.classList.toggle("active");
+            mobileNav.classList.toggle("hamburger-active");};
+            mobileNav.addEventListener("click", () => toggleNav());
+
+        </script>
+     
+<style>
+    /* Background image */
+body {
+    background-image: url('https://img.freepik.com/premium-photo/abstract-74-background-wallpaper-gradient_792836-167534.jpg?w=900');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    /* Menambahkan gaya khusus untuk tampilan layar berukuran kecil */
+    .container {
+        padding: 50px 0;
+    }
+}
+</style>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .card-slider {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card-container {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .card {
+        flex: 0 0 100%;
+        margin-right: 20px;
+    }
+
+    .card:last-child {
+        margin-right: 0;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .prev,
+    .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 1.5rem;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .prev {
+        left: 0;
+    }
+
+    .next {
+        right: 0;
+    }
+</style>
+</head>
+<body>
+<style>
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        overflow: hidden;
+    }
+    .carousel-slide {
+        display: none;
+        width: 100%;
+        height: 400px; /* set tinggi slide */
+        background-size: contain; /* atur ukuran gambar agar sesuai dengan tinggi slide */
+        background-position: center; /* atur posisi gambar agar berada di tengah */
+        background-repeat: no-repeat; /* pastikan gambar tidak diulang */
+    }
+    .carousel-slide img {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .first-slide-indicator {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+    .indicator-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #bbb;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    .indicator-dot.active {
+        background-color: #333;
+    }
+</style>
+</head>
+<body>
+
+<div class="carousel-container">
+    <div class="carousel-slide" style="background-image: url('p1remove.png')">
+    </div>
+    <div class="carousel-slide" style="background-image: url('p2remove.png')">
+    </div>
+    <div class="carousel-slide" style="background-image: url('p3remove.png')">
+    </div>
+
+    <div class="first-slide-indicator">
+        <span class="indicator-dot active"></span>
+        <span class="indicator-dot"></span>
+        <span class="indicator-dot"></span>
+    </div>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.indicator-dot');
+
+    showSlide(currentSlide);
+
+    function showSlide(index) {
+        slides.forEach((slide) => {
+            slide.style.display = 'none';
+        });
+        dots.forEach((dot) => {
+            dot.classList.remove('active');
+        });
+
+        slides[index].style.display = 'block';
+        dots[index].classList.add('active');
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            currentSlide = index;
+        });
+    });
+
+    // Autoplay function
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }, 3000); // Change slide every 3 seconds
+</script>
+<section>
+    <h2>Produk Terbaru</h2>
+    <div class="product">
+        <img src="p1.jpg" alt="Product">
+        <div class="product-info">
+            <h3>Printer Brother</h3>
+            <p>Untuk biaya cetak yang hemat, beralihlah ke printer Brother yang ideal untuk sekolah atau kantor.</p>
+            <button class="logout-btn" onclick="brother()">Review</button>
+        </div>
+    </div>
+    <div class="product">
+        <img src="p2.jpg" alt="Product">
+        <div class="product-info">
+            <h3>Printer Epson</h3>
+            <p>Merek satu ini dikenal menawarkan produk printer dengan kualitas yang unggul. Produknya pun hadir dalam berbagai jenis, baik untuk kebutuhan di rumah, kantor, ritel dan juga bisnis. Dengan harga printer merek Epson yang kompetitif, kualitas printer yang ditawarkannya pun tergolong baik di kelasnya. Tertarik beli? .</p>
+            <button class="logout-btn" onclick="epson()">Review</button>
+        </div>
+    </div>
+    <div class="product">
+        <img src="p3.jpg" alt="Product">
+        <div class="product-info">
+            <h3>Printer Canon</h3>
+            <p>Printer Canon adalah salah satu jenis mesin untuk mencetak dokumen dan gambar dari soft file menjadi hard file.</p>
+            <button class="logout-btn" onclick="canon()">Review</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Aston pekalongan</p>
+</footer>
+
+<script>
+    function beranda(){
+        window.location.href = "index.html";
+    }
+    function produk(){
+        window.location.href = "produk.html";
+    }
+    function pembayaran(){
+        window.location.href = "pembayaran.html";
+    }
+    function profil(){
+        window.location.href = "profil.html";
+    }
+    function brother(){
+        window.location.href = "brother.html";
+    }
+    function epson(){
+        window.location.href = "epson.html";
+    }
+    function canon(){
+        window.location.href = "canon.html";
+    }
+    function login(){
+        window.location.href = "login.html";
+    }
+    </script>
+</body>
+</html>
